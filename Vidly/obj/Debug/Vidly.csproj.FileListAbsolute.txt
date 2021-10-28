@@ -109,3 +109,5 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.pdb
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.initialModel.resources
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedTOCustomer.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
