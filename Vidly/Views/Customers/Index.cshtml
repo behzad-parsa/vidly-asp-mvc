@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Vidly.Models.Customer>
 @{ ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 
 <div class="container">
@@ -9,22 +9,32 @@
         <thead>
             <tr>
                 <th style="font-size:20px">Customer</th>
+                <th style="font-size:20px">DiscountRate</th>
             </tr>
         </thead>
         @if (!Model.Any())
         {
-<tr>We Don't Have Any customers</tr> }
-            else
-            {
+            <tr>We Don't Have Any customers</tr>
+    }
+        else
+        {
 
-<tbody>
-    @foreach (var item in Model)
-    {
-<tr><td>@Html.ActionLink(item.Name, "Detail", "Customers", new { id = item.Id }, null)</td></tr>                }
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    
+                    <tr>
+                        <td>@Html.ActionLink(item.Name, "Detail", "Customers", new { id = item.Id }, null)</td>
+                        <td>@item.MembershipType.DiscountRate%</td>
+                
+                    </tr>
+                 }
 
 
 
-</tbody>}
+            </tbody>
+        }
 
 
 
