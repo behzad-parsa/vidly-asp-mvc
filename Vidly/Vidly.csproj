@@ -199,6 +199,14 @@
     <Compile Include="Migrations\202110281023341_ModifyCustomerNameLength.Designer.cs">
       <DependentUpon>202110281023341_ModifyCustomerNameLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110282017559_AddingNameToMemberShip.cs" />
+    <Compile Include="Migrations\202110282017559_AddingNameToMemberShip.Designer.cs">
+      <DependentUpon>202110282017559_AddingNameToMemberShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110282036166_UpdateMembershipNameColumn.cs" />
+    <Compile Include="Migrations\202110282036166_UpdateMembershipNameColumn.Designer.cs">
+      <DependentUpon>202110282036166_UpdateMembershipNameColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -306,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110281023341_ModifyCustomerNameLength.resx">
       <DependentUpon>202110281023341_ModifyCustomerNameLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110282017559_AddingNameToMemberShip.resx">
+      <DependentUpon>202110282017559_AddingNameToMemberShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110282036166_UpdateMembershipNameColumn.resx">
+      <DependentUpon>202110282036166_UpdateMembershipNameColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
