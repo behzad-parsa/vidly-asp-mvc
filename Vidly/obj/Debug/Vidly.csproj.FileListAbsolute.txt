@@ -115,3 +115,5 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migration
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.ModifyCustomerNameLength.resources
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddingNameToMemberShip.resources
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateMembershipNameColumn.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBirthdayToCustomer.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddRequiredAnnotationToMembershipTypeName.resources

@@ -207,6 +207,14 @@
     <Compile Include="Migrations\202110282036166_UpdateMembershipNameColumn.Designer.cs">
       <DependentUpon>202110282036166_UpdateMembershipNameColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110290940590_AddBirthdayToCustomer.cs" />
+    <Compile Include="Migrations\202110290940590_AddBirthdayToCustomer.Designer.cs">
+      <DependentUpon>202110290940590_AddBirthdayToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110291019513_AddRequiredAnnotationToMembershipTypeName.cs" />
+    <Compile Include="Migrations\202110291019513_AddRequiredAnnotationToMembershipTypeName.Designer.cs">
+      <DependentUpon>202110291019513_AddRequiredAnnotationToMembershipTypeName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -320,6 +328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110282036166_UpdateMembershipNameColumn.resx">
       <DependentUpon>202110282036166_UpdateMembershipNameColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290940590_AddBirthdayToCustomer.resx">
+      <DependentUpon>202110290940590_AddBirthdayToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110291019513_AddRequiredAnnotationToMembershipTypeName.resx">
+      <DependentUpon>202110291019513_AddRequiredAnnotationToMembershipTypeName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

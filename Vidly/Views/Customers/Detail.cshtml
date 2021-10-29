@@ -2,8 +2,16 @@
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 <h1>Detail Page</h1>
 <h2>@Model.Name</h2>
+<ul>
+    <li>MemberShip Type :  @Model.MembershipType.Name</li>  
+     @if (Model.Birthday != null)
+     {
+               <li>Birthday  : @Model.Birthday.Value.ToShortDateString()</li>          
+      }
+</ul>
 
