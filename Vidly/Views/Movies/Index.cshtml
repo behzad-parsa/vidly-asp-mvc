@@ -3,21 +3,41 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    th {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size : 2.5rem;
+        text-align : center;
+    }
+    tr  {
+        font-family: Roboto;
+        font-size: 1.5rem;
+        text-align: center;
+        width:100px;
+    }
+</style>
 
 <h2>Movies</h2>
 @if (!Model.Any())
 {
-    <p>There isn't any movie on the list</p> }
+    <p>There isn't any movie on the list</p>
+    
+    }
 else
 {
-    <table class="table table-hover">
-        <tr>
-            <th>Movie Name</th>
+    <table class="table table-hover table-bordered">
+        <tr  >
+            <th width="60%">Movie Name</th>
+            <th width="40%">Genre</th>
         </tr>
         @foreach (var item in Model)
         {
-            <tr><td>@item.Name</td></tr>
-}
+            <tr >
+                <td>@Html.ActionLink(item.Name , "Detail" , "MoviesController" , new { id = item.Id})</td>
+                
+                <td>@item.Genre.Name</td>
+            </tr>
+}           
 
 
     </table>
