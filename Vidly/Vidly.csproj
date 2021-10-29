@@ -215,6 +215,10 @@
     <Compile Include="Migrations\202110291019513_AddRequiredAnnotationToMembershipTypeName.Designer.cs">
       <DependentUpon>202110291019513_AddRequiredAnnotationToMembershipTypeName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110291049069_ModifyMovieAndAddingMoviesToTable.cs" />
+    <Compile Include="Migrations\202110291049069_ModifyMovieAndAddingMoviesToTable.Designer.cs">
+      <DependentUpon>202110291049069_ModifyMovieAndAddingMoviesToTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -334,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110291019513_AddRequiredAnnotationToMembershipTypeName.resx">
       <DependentUpon>202110291019513_AddRequiredAnnotationToMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110291049069_ModifyMovieAndAddingMoviesToTable.resx">
+      <DependentUpon>202110291049069_ModifyMovieAndAddingMoviesToTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
