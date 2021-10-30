@@ -45,6 +45,18 @@ namespace Vidly.Controllers
         }
 
 
+        public ActionResult New()
+        {
+            return View();
+
+        }
+
+
+
+
+
+
+
         //private IEnumerable<Customer> GetCutomer()
         //{
         //    return new List<Customer>
