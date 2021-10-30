@@ -16,7 +16,7 @@
         @if (!Model.Any())
         {
             <tr>We Don't Have Any customers</tr>
-    }
+        }
         else
         {
 
@@ -24,14 +24,16 @@
                 @foreach (var item in Model)
                 {
 
-                    
+
                     <tr>
-                        <td>@Html.ActionLink(item.Name, "Detail", "Customers", new { id = item.Id }, null)</td>
+                        <td>@Html.ActionLink(item.Name, "Detail", "Customers", new { id = item.Id }, null) | @Html.ActionLink("Edit", "Edit", "Customers", new { id = item.Id }, null) </td>
+
+
                         <td>@item.MembershipType.Name</td>
                         <td>@item.MembershipType.DiscountRate%</td>
-                
+
                     </tr>
-                 }
+                }
 
 
 
@@ -41,7 +43,7 @@
 
 
     </table>
-
+    <pre> @Html.ActionLink("NEW", "New", "Customers")</pre>
 
 
 </div>
