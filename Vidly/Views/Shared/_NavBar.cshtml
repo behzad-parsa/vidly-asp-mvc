@@ -1,4 +1,25 @@
 ﻿
+<style>
+    .vidly-title{
+        font-family : 'ONE DAY';
+        font-weight :900;
+        font-size : 2.5rem;
+        letter-spacing : 10px;
+    }
+    ul li {
+        font-family : 'Yu Gothic';
+        font-size : 1.6rem;
+        margin-top : 3.5px;
+        
+        
+       
+    }
+    .navbar{
+        height:55px;
+   }
+</style>
+
+
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -8,10 +29,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand vidly-title" })
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav ">
                 <li>@Html.ActionLink("Cutomers", "Index", "Customers")</li>
                 <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
                 <li>@Html.ActionLink("Old Cutomers", "Random", "Movies")</li>

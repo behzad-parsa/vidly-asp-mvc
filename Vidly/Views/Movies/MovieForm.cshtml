@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>MovieForm</h2>
+
 <style>
     label {
         font-family: Roboto;
@@ -13,8 +13,23 @@
     }
 </style>
 
+@{ 
+    string headTitle;
+    if (ViewContext.RouteData.Values["action"].ToString() == "Edit")
+    {
+        headTitle = "Edit Movie";
+    }
+    else
+    {
+        headTitle = "New Movie";
+    }
 
 
+}
+
+
+<h2>@headTitle</h2>
+<hr />
 
 @using (Html.BeginForm("Save", "Movies"))
 {
