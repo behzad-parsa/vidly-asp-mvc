@@ -19,12 +19,17 @@
     pre{
 
     }
+    hr{
+        
+        margin: 10px 0 30px 0;
+    }
 </style>
 <h2>@Model.Name</h2>
+<hr />
 <ul class="movies-detail">
     <li><pre><span>Genre : </span>  @Model.Genre.Name</pre>     </li>
     <li><pre><span>Release Date : </span>  @Model.ReleaseDate.ToString("dddd, MMMM dd, yyyy")</pre> </li>
     <li><pre><span>Date Added : </span>    @Model.DateAdded.ToLongDateString() </pre></li>
-    <li><pre><span>Number In Stocks : </span> @Model.NumberInStock</pre> </li>
+    <li style="margin-bottom:35px"><pre><span>Number In Stocks : </span> @Model.NumberInStock</pre> </li>
      
 </ul>

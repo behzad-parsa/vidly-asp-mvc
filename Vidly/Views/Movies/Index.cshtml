@@ -6,7 +6,7 @@
 <style>
     th {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size : 2.5rem;
+        font-size : 2rem;
         text-align : center;
     }
     tr  {
@@ -15,9 +15,22 @@
         text-align: center;
         width:100px;
     }
+    .btn-new-movie{
+        padding:8px;
+        font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom : 10px;
+        font-size : 1.5rem;
+        width : 200px;
+    }
 </style>
 
+
+
 <h2>Movies</h2>
+
+@Html.ActionLink("NEW MOVIE" , "NewMovie" , "Movies" , new {@class= "btn btn-primary btn-new-movie" })
+
+
 @if (!Model.Any())
 {
     <p>There isn't any movie on the list</p>
@@ -33,7 +46,8 @@ else
         @foreach (var item in Model)
         {
             <tr >
-                <td>@Html.ActionLink(item.Name , "Detail" , "Movies" , new { id = item.Id} , null)</td>
+                <td>@Html.ActionLink(item.Name , "Detail" , "Movies" , new { id = item.Id} , null) | 
+                @Html.ActionLink("Edit" , "Edit" , "Movies" , new { id = item.Id} , null) </td>
                 
                 <td>@item.Genre.Name</td>
             </tr>

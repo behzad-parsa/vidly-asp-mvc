@@ -21,7 +21,117 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // GET: Movies / Random
+     
+
+
+
+
+        public ActionResult Index()
+        {
+            var movies = _context.Movies.Include(m=>m.Genre).ToList();
+
+
+            return View(movies);
+        }
+        
+
+        public ActionResult Detail (int id)
+        {
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+
+            }
+
+            return View(movie);
+        }
+
+
+        
+        public ActionResult NewMovie()
+        {
+
+            var viewModel = new MovieFormViewModel()
+            {
+                Genres = _context.Genres.ToList()
+
+            };
+
+
+            return View("MovieForm" , viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new MovieFormViewModel()
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+            return View("MovieForm", viewModel);
+        }
+
+
+        [HttpPost]
+        public ActionResult Save (Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+
+            }
+            else
+            {
+                var movieInDB = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDB.Name = movie.Name;
+                movieInDB.ReleaseDate = movie.ReleaseDate;
+                
+                movieInDB.NumberInStock = movie.NumberInStock;
+                movieInDB.GenreId = movie.GenreId;
+                
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index" , "Movies");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Related TO old Customers And First Example Of Mvc's
+
         public ActionResult Random()
         {
 
@@ -53,31 +163,6 @@ namespace Vidly.Controllers
             //return View(movie);
             return View(viewModel);
         }
-
-
-
-
-        public ActionResult Index()
-        {
-            var movies = _context.Movies.Include(m=>m.Genre).ToList();
-
-
-            return View(movies);
-        }
-        
-
-        public ActionResult Detail (int id)
-        {
-            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
-            if (movie == null)
-            {
-                return HttpNotFound();
-
-            }
-
-            return View(movie);
-        }
-
         //private IEnumerable<Movie> GetMovies()
         //{
 

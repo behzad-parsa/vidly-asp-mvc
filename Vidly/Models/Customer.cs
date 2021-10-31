@@ -10,7 +10,7 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required]  ///Which Cause Can't Be Nullable
+        [Required]  //  /Which Cause Can't Be Nullable
         [StringLength(250)]
         public string Name { get; set; }
 
