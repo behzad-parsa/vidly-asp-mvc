@@ -114,16 +114,9 @@ namespace Vidly.Controllers
                 movieInDB.GenreId = movie.GenreId;
                 
             }
-            _context.SaveChanges();
+               _context.SaveChanges();
             return RedirectToAction("Index" , "Movies");
         }
-
-
-
-
-
-
-
 
 
 
