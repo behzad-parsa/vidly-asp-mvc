@@ -22,6 +22,7 @@ namespace Vidly.Models
         public byte MembershipTypeId { get; set; } // Define As Foriegn Key
 
         [Display(Name="Date Of Birth")]
+        [Min18YearsIfMember]         // If User Select MemberShipType The Birthdate Must Be Mentioned and If It wasn't Pay As You go the Customer Must be at least on 18 
         public DateTime? Birthday { get; set; }
 
     }
