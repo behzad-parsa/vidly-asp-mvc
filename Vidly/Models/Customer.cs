@@ -25,5 +25,11 @@ namespace Vidly.Models
         [Min18YearsIfMember]         // If User Select MemberShipType The Birthdate Must Be Mentioned and If It wasn't Pay As You go the Customer Must be at least on 18 
         public DateTime? Birthday { get; set; }
 
+
+        
+
+
+
+
     }
 }
