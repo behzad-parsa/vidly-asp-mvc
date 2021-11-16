@@ -63,7 +63,10 @@
 
 
     </div>
-    @Html.HiddenFor(m => m.Customer.Id)
+
+
+    @Html.HiddenFor(m => m.Customer.Id) 
+    @Html.AntiForgeryToken()  //To Prevent CSRF Attack
     <button type="submit" class="btn btn-primary">SAVE</button>
 
 
