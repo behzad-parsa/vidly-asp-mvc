@@ -36,24 +36,25 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.Name)
         @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
-
+        @Html.ValidationMessageFor(m=>m.Movie.Name)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.ReleaseDate)
-        @Html.TextBoxFor(m => m.Movie.ReleaseDate , "{0 : dd MM yyyy}" , new { @class = "form-control" })
-
+        @Html.TextBoxFor(m => m.Movie.ReleaseDate , "{0 : dd MMM yyyy}" , new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Movie.ReleaseDate)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.GenreId)
         @Html.DropDownListFor(m => m.Movie.GenreId, new SelectList(Model.Genres, "Id", "Name"), "-- Select Genre --", new { @class = "form-control" })
-
+        @Html.ValidationMessageFor(m=>m.Movie.GenreId)  
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.NumberInStock)
         @Html.TextBoxFor(m => m.Movie.NumberInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Movie.NumberInStock)
 
     </div>
 
