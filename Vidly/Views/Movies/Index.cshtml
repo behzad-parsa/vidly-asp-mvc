@@ -15,20 +15,34 @@
         text-align: center;
         width:100px;
     }
-    .btn-new-movie{
+/*    .btn-new-movie{
         padding:8px;
         font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-bottom : 10px;
         font-size : 1.5rem;
-        width : 200px;
+        width : 170px;
+    }*/
+    .btn.btn-add-movie {
+        
+        padding: 8px;
+        margin-bottom: 10px;
+        float:right;
+        width: 4%;
+        border-radius : 11px;
+      
     }
+
+
 </style>
 
 
 
 <h2>Movies</h2>
+<hr />
+@*@Html.ActionLink("NEW MOVIE" , "NewMovie" , "Movies" , new {@class= "btn btn-primary btn-new-movie" })*@
+@* ---------------or can use url action ------------------*@
+<a href="@Url.Action("NewMovie" , "Movies")" class="btn btn-success btn-add-movie"> <i class="material-icons" style="font-size:18px;margin-top:3px">add</i></a>
 
-@Html.ActionLink("NEW MOVIE" , "NewMovie" , "Movies" , new {@class= "btn btn-primary btn-new-movie" })
 
 
 @if (!Model.Any())

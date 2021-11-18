@@ -22,24 +22,7 @@ namespace Vidly.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         // GET: Movies / Random
-     
-
-
-
 
         public ActionResult Index()
         {
@@ -96,7 +79,8 @@ namespace Vidly.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost] 
+        [ValidateAntiForgeryToken]
         public ActionResult Save (Movie movie)
         {
             if (!ModelState.IsValid)

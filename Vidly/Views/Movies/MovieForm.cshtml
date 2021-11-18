@@ -59,6 +59,7 @@
     </div>
 
     @Html.HiddenFor(m => m.Movie.Id)
+    @Html.AntiForgeryToken()
     <button class="btn btn-primary">SAVE</button>
 
 
