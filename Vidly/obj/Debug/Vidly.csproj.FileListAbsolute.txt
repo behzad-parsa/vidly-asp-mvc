@@ -120,3 +120,9 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migration
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.ModifyMovieAndAddingMoviesToTable.resources
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.CreateGenreTable.resources
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenres.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Net.Http.Formatting.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Net.Http.Formatting.xml
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.xml
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
