@@ -126,3 +126,5 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Net.Http.Forma
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.xml
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\AutoMapper.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\AutoMapper.xml
