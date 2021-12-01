@@ -5,12 +5,13 @@
 
 <div class="container">
     <h2>List Of Our Customers</h2>
-    <table class="table table-hover">
+    <table id="customers" class="table table-hover">
         <thead>
             <tr>
                 <th style="font-size:20px">Customer</th>
                 <th style="font-size:20px">MemeberShip Type</th>
                 <th style="font-size:20px">DiscountRate</th>
+                <th>Delete</th>
             </tr>
         </thead>
         @if (!Model.Any())
@@ -31,6 +32,9 @@
 
                         <td>@item.MembershipType.Name</td>
                         <td>@item.MembershipType.DiscountRate%</td>
+                        <td>
+                            <button data-customer-id="@item.Id" class="btn-link js-delete">Delete</button>
+                        </td>
 
                     </tr>
                 }
@@ -45,5 +49,39 @@
     </table>
     <pre> @Html.ActionLink("NEW", "New", "Customers")</pre>
 
+    
 
 </div>
+
+@section scripts
+{   
+    <script>
+        $(document).ready(function () {
+            $("#customers .js-delete").on("click", function () {
+                var button = $(this);
+                if (confirm("Are You Sure To Delete?")) {
+                    $.ajax({
+                        url: "/api/customers/" + $(this).attr("data-customer-id"),
+                        method: "DELETE",
+                        success: function () {
+                            console.log("success");
+                            button.parents("tr").remove();
+                        }
+                    });
+
+
+                }
+
+            });
+        });
+
+    </script>
+    
+    
+}
+
+
+
+
+
+

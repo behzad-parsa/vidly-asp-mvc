@@ -128,3 +128,5 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.WebHo
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\AutoMapper.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\AutoMapper.xml
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\ConfigParser.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\WakaTime.dll
