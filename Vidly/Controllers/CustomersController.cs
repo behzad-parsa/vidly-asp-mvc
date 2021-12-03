@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModel;
+using Newtonsoft.Json;
 
 namespace Vidly.Controllers
 {
@@ -15,6 +16,7 @@ namespace Vidly.Controllers
         public CustomersController()
         {
             _context = new ApplicationDbContext();
+            
         }
         protected override void Dispose(bool disposing)
         {

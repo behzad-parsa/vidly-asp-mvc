@@ -49,7 +49,6 @@
     </table>
     <pre> @Html.ActionLink("NEW", "New", "Customers")</pre>
 
-    
 
 </div>
 
@@ -57,7 +56,12 @@
 {   
     <script>
         $(document).ready(function () {
-            $("#customers .js-delete").on("click", function () {
+            $("#customers").dataTable();
+
+
+            $("#customers").on("click", ".js-delete", function () {    //Optimize - instead of  $("#customers .js-delete").on("click", function (){})
+                                                                        //Explantion -  at the previous code for each row we had handler but now we just have one handler for all customers list
+                                                                        //cause the handler hook with #customers which is one element instead of starting with "customer js-delete" which depend on count of customers 
                 var button = $(this);
                 if (confirm("Are You Sure To Delete?")) {
                     $.ajax({
