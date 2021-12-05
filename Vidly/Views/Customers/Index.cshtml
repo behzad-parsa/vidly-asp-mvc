@@ -8,41 +8,35 @@
     <table id="customers" class="table table-hover">
         <thead>
             <tr>
-                <th style="font-size:20px">Customer</th>
+                <th style="font-size:20px">Customer Name</th>
                 <th style="font-size:20px">MemeberShip Type</th>
                 <th style="font-size:20px">DiscountRate</th>
-                <th>Delete</th>
-            </tr>
+                <th style="font-size:20px">Delete</th>
+            </tr> 
         </thead>
-        @if (!Model.Any())
+        <tbody>
+
+        </tbody>
+        @*@if (!Model.Any())
         {
             <tr>We Don't Have Any customers</tr>
         }
         else
         {
-
             <tbody>
                 @foreach (var item in Model)
                 {
-
-
                     <tr>
                         <td>@Html.ActionLink(item.Name, "Detail", "Customers", new { id = item.Id }, null) | @Html.ActionLink("Edit", "Edit", "Customers", new { id = item.Id }, null) </td>
-
-
                         <td>@item.MembershipType.Name</td>
                         <td>@item.MembershipType.DiscountRate%</td>
                         <td>
                             <button data-customer-id="@item.Id" class="btn-link js-delete">Delete</button>
                         </td>
-
                     </tr>
                 }
-
-
-
             </tbody>
-        }
+        }*@
 
 
 
@@ -56,9 +50,45 @@
 {   
     <script>
         $(document).ready(function () {
-            $("#customers").dataTable();
+
+            //Datatable Jqueryplugin to get data with api and generate tags on client side which cause 
+            $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc:""
+                },
+                columns: [
+                    //first column
+                    {
+                        data: "name",
+                        render: function (data, type, customer) {
+                            
+                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+                        }
+                    },
+                    {
+
+                        data:"membershipType.name"
+                    },
+
+                    {
+                        data:"isSubscribedToNewsLetter"
+                    },
+
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete </button>";
+                        }
+                    }
+                    
+                 
+                ]
+            });
 
 
+
+            //Delete Button 
             $("#customers").on("click", ".js-delete", function () {    //Optimize - instead of  $("#customers .js-delete").on("click", function (){})
                                                                         //Explantion -  at the previous code for each row we had handler but now we just have one handler for all customers list
                                                                         //cause the handler hook with #customers which is one element instead of starting with "customer js-delete" which depend on count of customers 
