@@ -6,16 +6,18 @@
 <style>
     th {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size : 2rem;
-        text-align : center;
+        font-size: 2rem;
+        text-align: center;
     }
-    tr  {
+
+    tr {
         font-family: Roboto;
         font-size: 1.5rem;
         text-align: center;
-        width:100px;
+        vertical-align: middle;
     }
-/*    .btn-new-movie{
+
+    /*    .btn-new-movie{
         padding:8px;
         font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-bottom : 10px;
@@ -23,16 +25,18 @@
         width : 170px;
     }*/
     .btn.btn-add-movie {
-        
         padding: 8px;
         margin-bottom: 10px;
-        float:right;
+        float: right;
         width: 4%;
-        border-radius : 11px;
-      
+        border-radius: 11px;
     }
-
-
+    .btn{
+        margin-right : 5px;
+    }
+    #movies td{
+       vertical-align:middle;
+    }
 </style>
 
 
@@ -41,32 +45,120 @@
 <hr />
 @*@Html.ActionLink("NEW MOVIE" , "NewMovie" , "Movies" , new {@class= "btn btn-primary btn-new-movie" })*@
 @* ---------------or can use url action ------------------*@
-<a href="@Url.Action("NewMovie" , "Movies")" class="btn btn-success btn-add-movie"> <i class="material-icons" style="font-size:18px;margin-top:3px">add</i></a>
+
+<div class=" row">
+    <a href="@Url.Action("NewMovie" , "Movies")" class="btn btn-success btn-add-movie">
+        <i class="material-icons" style="font-size:18px;margin-top:3px">add</i>
+    </a>
+
+</div>
 
 
-
-@if (!Model.Any())
+@*@if (!Model.Any())
 {
     <p>There isn't any movie on the list</p>
-    
-    }
+
+}
 else
 {
-    <table class="table table-hover table-bordered">
-        <tr  >
-            <th width="60%">Movie Name</th>
-            <th width="40%">Genre</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr >
-                <td>@Html.ActionLink(item.Name , "Detail" , "Movies" , new { id = item.Id} , null) | 
-                @Html.ActionLink("Edit" , "Edit" , "Movies" , new { id = item.Id} , null) </td>
-                
-                <td>@item.Genre.Name</td>
+    <table id="movies" class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th width="60%">Movie Name</th>
+                <th width="40%">Genre</th>
             </tr>
-}           
+        </thead>
 
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Name, "Detail", "Movies", new { id = item.Id }, null) |
+                        @Html.ActionLink("Edit", "Edit", "Movies", new { id = item.Id }, null)
+                    </td>
+
+                    <td>@item.Genre.Name</td>
+                </tr>
+            }
+        </tbody>
 
     </table>
+}*@
+
+
+
+<table id="movies" class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th width="60%">Movie Name</th>
+            <th width="40%">Genre</th>
+            <th width="40%">Option</th>
+        </tr>
+    </thead>
+
+    <tbody>
+ 
+    </tbody>
+
+</table>
+
+
+
+
+@section scripts{
+
+
+    <script>
+        $(document).ready(function () {
+            $("#movies").dataTable({
+                
+                ajax: {
+                    url: "api/movies/",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        width:"45%",
+                        data: "name",
+                        render: function (data , type , movie) {
+                            return "<a href=@Url.Action("Detail", "Movies")?id="+movie.id+">" + movie.name + "</a>";
+                        }
+                    },
+                    {
+                        width: "35%",
+                        
+                        data: "name"
+
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<a  href='@Url.Action("Edit", "Movies")?id=" + data + "' class='btn btn-primary'> <i class='material-icons' style='font-size:12px;margin-top:3px'>edit</i></a>" +
+                                "<a  href='@Url.Action("Edit", "Movies")?id=" + data +"' class='btn btn-danger'> <i class='material-icons' style='font-size:12px;margin-top:3px'>delete</i></a>";
+                        }
+                    }
+
+                ]
+
+
+
+            });
+
+
+
+
+        });
+
+
+    </script>
+
+
+
+
+
+
+
+
+
 }
