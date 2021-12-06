@@ -52,7 +52,7 @@
         $(document).ready(function () {
 
             //Datatable Jqueryplugin to get data with api and generate tags on client side which cause 
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc:""
@@ -98,8 +98,11 @@
                         url: "/api/customers/" + $(this).attr("data-customer-id"),
                         method: "DELETE",
                         success: function () {
-                            console.log("success");
-                            button.parents("tr").remove();
+                            
+                            //button.parents("tr").remove();
+
+                            //The Datatable keep Data Internally so we must deleted From internal
+                            table.row(button.parents("tr")).remove().draw();
                         }
                     });
 
