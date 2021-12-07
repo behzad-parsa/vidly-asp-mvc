@@ -111,7 +111,7 @@ else
 
     <script>
         $(document).ready(function () {
-            $("#movies").dataTable({
+            var movieTable = $("#movies").DataTable({
                 
                 ajax: {
                     url: "api/movies/",
@@ -122,33 +122,52 @@ else
                         width:"45%",
                         data: "name",
                         render: function (data , type , movie) {
-                            return "<a href=@Url.Action("Detail", "Movies")?id="+movie.id+">" + movie.name + "</a>";
+                            return "<a class='' href=@Url.Action("Detail", "Movies")?id="+movie.id+">" + movie.name+" (" + movie.releaseDate.substr(0 , 4) + ") </a>";
                         }
                     },
                     {
-                        width: "35%",
-                        
-                        data: "name"
-
+                        width: "35%",   
+                        data:"genre.name"
                     },
                     {
                         data: "id",
                         render: function (data) {
-                            return "<a  href='@Url.Action("Edit", "Movies")?id=" + data + "' class='btn btn-primary'> <i class='material-icons' style='font-size:12px;margin-top:3px'>edit</i></a>" +
-                                "<a  href='@Url.Action("Edit", "Movies")?id=" + data +"' class='btn btn-danger'> <i class='material-icons' style='font-size:12px;margin-top:3px'>delete</i></a>";
+                            return "<a  href='@Url.Action("Edit", "Movies")?id=" + data + "' class='btn btn-primary'> <i class='material-icons' style='font-size:18px;margin-top:3px'>edit</i></a>" +
+                                "<button class='btn btn-danger js-delete' data-movie-id="+data+"> <i class='material-icons' style='font-size:18px;margin-top:3px'>delete</i></button>";
                         }
                     }
-
                 ]
-
-
-
             });
 
 
 
+            //delete Button
+            $("#movies").on("click", ".js-delete", function () {
+                var button = $(this);
+                if (confirm("Are You Sure To Delete This ?")) {
+                    $.ajax({
+                        url: "/api/movies/"+ button.attr("data-movie-id"),
+                        method: "DELETE",
+                        success: function () {
+
+                            //button.parents("tr").remove();
+                            movieTable.row(button.parents("tr")).remove().draw(); //To see Effect of Delete , filter , .. at the moment
+                                                                                  //can use draw()
+                           
+                        }
+
+                    });
+
+
+                }
+ 
+
+            });
+
 
         });
+
+
 
 
     </script>
