@@ -7,16 +7,15 @@
         letter-spacing : 10px;
     }
     ul li {
-        font-family : 'Yu Gothic';
-        font-size : 1.6rem;
+        font-family : Glory;
+        font-size : 2rem;
         margin-top : 3.5px;
-        
-        
-       
     }
+
     .navbar{
         height:55px;
    }
+
 </style>
 
 
@@ -32,12 +31,15 @@
             @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand vidly-title" })
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav ">
+            <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Cutomers", "Index", "Customers")</li>
                 <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
                 <li>@Html.ActionLink("Old Cutomers", "Random", "Movies")</li>
 
+
             </ul>
+            @Html.Partial("_LoginPartial")
+
         </div>
     </div>
 </div>
