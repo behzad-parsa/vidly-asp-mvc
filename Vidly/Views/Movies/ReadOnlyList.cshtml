@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    th {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    tr {
+        font-family: Roboto;
+        font-size: 1.5rem;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    /*    .btn-new-movie{
+        padding:8px;
+        font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom : 10px;
+        font-size : 1.5rem;
+        width : 170px;
+    }*/
+    .btn.btn-add-movie {
+        padding: 8px;
+        margin-bottom: 10px;
+        float: right;
+        width: 4%;
+        border-radius: 11px;
+    }
+    .btn{
+        margin-right : 5px;
+    }
+    #movies td{
+       vertical-align:middle;
+    }
+</style>
+
+
+
+<h2>Movies</h2>
+<hr />
+
+
+
+<table id="movies" class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th width="50%">Movie Name</th>
+            <th width="50%">Genre</th>
+        </tr>
+    </thead>
+
+    <tbody>
+ 
+    </tbody>
+
+</table>
+
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            var movieTable = $("#movies").DataTable({
+                
+                ajax: {
+                    url: "api/movies/",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        width:"50%",
+                        data: "name",
+                    },
+                    {
+                        width: "50%",   
+                        data:"genre.name"
+                    }
+                ]
+            });
+
+        });
+
+    </script>
+
+}

@@ -31,24 +31,28 @@ namespace Vidly.Controllers
 
             // return View(movies);
 
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("List");
+            }
+            
+
+            return View("ReadOnlyList");
         }
         
 
         public ActionResult Detail (int id)
         {
             var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
+
             if (movie == null)
-            {
-                return HttpNotFound();
-
-            }
-
+                 return HttpNotFound();
+            
             return View(movie);
         }
 
 
-        
+        [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult NewMovie()
         {
 
