@@ -130,3 +130,4 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\AutoMapper.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\AutoMapper.xml
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\ConfigParser.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\WakaTime.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
