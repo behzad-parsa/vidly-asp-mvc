@@ -33,11 +33,11 @@ namespace Vidly.Controllers
 
             if (User.IsInRole(RoleName.CanManageMovies))
             {
-                return View("List");
+                return View("List"); //List Is Complete View To Show TO the Admin
             }
             
 
-            return View("ReadOnlyList");
+            return View("ReadOnlyList"); //Simple View Which Just List For The Guests
         }
         
 
