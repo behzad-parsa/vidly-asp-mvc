@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : Controller
     {
         ApplicationDbContext _context;
@@ -22,8 +23,8 @@ namespace Vidly.Controllers
         }
 
 
+        [AllowAnonymous]
         // GET: Movies / Random
-
         public ActionResult Index()
         {
             // var movies = _context.Movies.Include(m=>m.Genre).ToList();
@@ -39,8 +40,8 @@ namespace Vidly.Controllers
 
             return View("ReadOnlyList"); //Simple View Which Just List For The Guests
         }
-        
 
+        
         public ActionResult Detail (int id)
         {
             var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
@@ -52,7 +53,7 @@ namespace Vidly.Controllers
         }
 
 
-        [Authorize(Roles =RoleName.CanManageMovies)]
+        
         public ActionResult NewMovie()
         {
 
@@ -67,6 +68,7 @@ namespace Vidly.Controllers
             return View("MovieForm" , viewModel);
         }
 
+        
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -128,7 +130,7 @@ namespace Vidly.Controllers
 
 
         //Related TO old Customers And First Example Of Mvc's
-
+        [AllowAnonymous]
         public ActionResult Random()
         {
 
