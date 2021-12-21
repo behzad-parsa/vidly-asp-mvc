@@ -132,3 +132,8 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\ConfigParser.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\WakaTime.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicense.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.Ado.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.AspNet.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.Core.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.EF6.dll
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.Mvc5.dll
