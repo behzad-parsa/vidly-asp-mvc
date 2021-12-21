@@ -1,17 +1,21 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using Vidly.Dtos;
+using Vidly.Models;
+using System.Data.Entity;
 namespace Vidly.Controllers.Api
 {
-    public class NewRentalsController : Controller
+    public class NewRentalsController : ApiController
     {
-        // GET: NewRentals
-        public ActionResult Index()
+        [HttpPost]
+        public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
-            return View();
+            throw new NotImplementedException();
         }
     }
 }
