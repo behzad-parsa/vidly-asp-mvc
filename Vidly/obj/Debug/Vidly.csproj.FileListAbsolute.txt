@@ -138,3 +138,4 @@ E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.Core.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.EF6.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\bin\Glimpse.Mvc5.dll
 E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.CreateRental.resources
+E:\Programming\Projects\ASP\Sample 3 Vidly\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddAvailablePropertyToMovie.resources

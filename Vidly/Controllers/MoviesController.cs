@@ -103,23 +103,27 @@ namespace Vidly.Controllers
                 return View("MovieForm", viewModel);
 
             }
+            //Add New Movie
             if (movie.Id == 0)
             {
+                movie.NumberAvailable = movie.NumberInStock;
                 movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);
 
+                
             }
+            //Save Edited Movie
             else
             {
                 var movieInDB = _context.Movies.Single(m => m.Id == movie.Id);
                 movieInDB.Name = movie.Name;
                 movieInDB.ReleaseDate = movie.ReleaseDate;
                 
-                movieInDB.NumberInStock = movie.NumberInStock;
+                movieInDB.NumberInStock  = movie.NumberInStock;
                 movieInDB.GenreId = movie.GenreId;
                 
             }
-               _context.SaveChanges();
+             _context.SaveChanges();
             return RedirectToAction("Index" , "Movies");
         }
 
