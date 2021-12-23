@@ -23,10 +23,10 @@ namespace Vidly.Models
 
         [Range(1,20)]
         [Display(Name = "Number In Stock")]
-        public short NumberInStock { get; set; }
+        public byte NumberInStock { get; set; }
 
         
-        public short NumberAvailable { get; set; }
+        public byte NumberAvailable { get; set; }
 
 
         //Foriegn KEY

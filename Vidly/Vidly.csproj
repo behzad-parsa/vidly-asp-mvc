@@ -287,6 +287,14 @@
     <Compile Include="Migrations\202112221047010_AddAvailablePropertyToMovie.Designer.cs">
       <DependentUpon>202112221047010_AddAvailablePropertyToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112221215303_InitialNumberAvailable.cs" />
+    <Compile Include="Migrations\202112221215303_InitialNumberAvailable.Designer.cs">
+      <DependentUpon>202112221215303_InitialNumberAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112221243478_ModifyNumberInMovieFromShortToByte.cs" />
+    <Compile Include="Migrations\202112221243478_ModifyNumberInMovieFromShortToByte.Designer.cs">
+      <DependentUpon>202112221243478_ModifyNumberInMovieFromShortToByte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -611,6 +619,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112221047010_AddAvailablePropertyToMovie.resx">
       <DependentUpon>202112221047010_AddAvailablePropertyToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112221215303_InitialNumberAvailable.resx">
+      <DependentUpon>202112221215303_InitialNumberAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112221243478_ModifyNumberInMovieFromShortToByte.resx">
+      <DependentUpon>202112221243478_ModifyNumberInMovieFromShortToByte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
