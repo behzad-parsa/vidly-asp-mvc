@@ -95,7 +95,7 @@ namespace Vidly.Controllers.Api
             //    else
             //        return BadRequest("Movie Is Not Available");
             //});
-
+            
 
             // return Created(new Uri(Request.RequestUri + "/" + newRentalDto.CustomerId) , newRentalDto);
             return Ok(); //cause we have multiple resources
