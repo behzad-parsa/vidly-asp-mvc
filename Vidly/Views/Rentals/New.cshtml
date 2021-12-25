@@ -5,7 +5,7 @@
 
 <h2>New Rental Form</h2>
 
-<form action="/" method="post">
+<form action="/" method="post"  id="newRental">
 
     <div class="form-group">
         <label>Customer</label>
@@ -101,7 +101,28 @@
 
 
 
+            $("#newRental").submit(function(e) {
+                e.preventDefault();
 
+                $.ajax({
+
+                    url: "/api/newRentals",
+                    method: "post",
+                    data: vm
+
+                })
+                    .done(function () {
+                        toastr.options.positionClass = "toast-bottom-right";
+                        $(".list-group-item").remove();
+
+                        toastr.success("Rentals Successfully recorded.");
+
+                        
+                    })
+                    .fail(function () {
+                        toastr.error("Something Unexpecteded Happend.");
+                    });
+            });
 
         });
 
