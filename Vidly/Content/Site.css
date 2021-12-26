@@ -28,12 +28,12 @@ textarea {
 
 .field-validation-error , 
 label.error{
-    color: red;
+    color: red !important;
 }
 
 .input-validation-error , 
 input.error{
-    border: 2px solid red;
+    border: 2px solid red !important;
 }
 
 .validation-summary-errors span {
