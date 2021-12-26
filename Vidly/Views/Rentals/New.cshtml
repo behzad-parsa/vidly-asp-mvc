@@ -24,7 +24,7 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input type="text" id="customer"  data-rule-validCustomer="true" required class="form-control" name="customer" value="" />
+            <input type="text" id="customer"   required class="form-control" name="customer" value="" />
         </div>
         
     </div>
@@ -32,7 +32,7 @@
     <div class="form-group">
         <label>Movies</label>
         <div class="tt-container">
-            <input type="text" id="movie" data-rule-atLeastOneMovie="true" class="form-control" name="movie" value="" />
+            <input type="text" id="movie"  class="form-control" name="movie" value="" />
         </div>
         
     </div>
@@ -122,7 +122,11 @@
                 return vm.movieIds.length > 0;
             },"Please Select at least On Movie");
 
-            var vliadator=$("#newRental").validate({
+            var vliadator = $("#newRental").validate({
+                rules: {
+                    customer: { validCustomer: true },
+                    movie: { atLeastOneMovie: true }
+                },
 
                 submitHandler: function () {
                     $.ajax({
