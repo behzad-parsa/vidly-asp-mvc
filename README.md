@@ -17,7 +17,6 @@ The Rental Movie App
   - ASP .NET MVC
   - Identity Framework
 
-
 - Front-End
   - Html/Css
   - bootstrap
@@ -27,12 +26,10 @@ The Rental Movie App
     - Validation
     - Toastr
 
-
 - Database
   - SQL SERVER
   - Entity Framework
  
-
 - Tools 
   - Glimpse
   - Automapper
