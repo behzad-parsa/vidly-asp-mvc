@@ -25,6 +25,7 @@ The Rental Movie App
     - DataTable
     - Validation
     - Toastr
+    - Ajax
 
 - Database
   - SQL SERVER
